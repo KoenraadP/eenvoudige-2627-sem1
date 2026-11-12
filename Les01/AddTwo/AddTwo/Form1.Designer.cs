@@ -35,6 +35,7 @@
             this.txtNumber2 = new System.Windows.Forms.TextBox();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +83,7 @@
             // 
             this.txtResult.Location = new System.Drawing.Point(74, 71);
             this.txtResult.Name = "txtResult";
+            this.txtResult.ReadOnly = true;
             this.txtResult.Size = new System.Drawing.Size(100, 20);
             this.txtResult.TabIndex = 5;
             // 
@@ -95,11 +97,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(43, 109);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(149, 13);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "Je hebt iets verkeerd ingevuld";
+            this.lblError.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(229, 102);
+            this.ClientSize = new System.Drawing.Size(229, 131);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.txtNumber2);
@@ -123,6 +137,7 @@
         private System.Windows.Forms.TextBox txtNumber2;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblError;
     }
 }
 
