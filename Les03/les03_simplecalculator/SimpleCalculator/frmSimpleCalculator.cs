@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace SimpleCalculator
@@ -34,42 +35,64 @@ namespace SimpleCalculator
             number2 = Convert.ToDouble(txtNumber2.Text);
         }
 
+        // methode om twee double getallen op te tellen
+        // type methode is double want uitkomst van optelling is 
+        // hier ook double
+        // de parameters zijn de twee getallen die opgeteld worden
+        private double Add(double nr1, double nr2)
+        {
+            ConvertNumbers();
+            // berekening doen
+            double result = nr1 + nr2;
+            // uitkomst als return waarde van methode
+            return result;
+        }
+
+        private double Subtract(double nr1, double nr2)
+        {
+            double result = nr1 - nr2;
+            return result;
+        }
+
+        private double Multiply(double nr1, double nr2)
+        {
+            double result = nr1 * nr2;
+            return result;
+        }
+
+        private double Divide(double nr1, double nr2)
+        {
+            double result = nr1 / nr2;
+            return result;
+        }
+
         #endregion
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             ConvertNumbers();
-            double sum = number1 + number2;
+            double sum = Add(number1, number2);
             txtResult.Text = sum.ToString();
         }
 
         private void BtnSubtract_Click(object sender, EventArgs e)
         {
-            double number1 = Convert.ToDouble(txtNumber1.Text);
-            double number2 = Convert.ToDouble(txtNumber2.Text);
-
-            double difference = number1 - number2;
-
+            ConvertNumbers();
+            double difference = Subtract(number1, number2);
             txtResult.Text = difference.ToString();
         }
 
         private void BtnMultiply_Click(object sender, EventArgs e)
         {
-            double number1 = Convert.ToDouble(txtNumber1.Text);
-            double number2 = Convert.ToDouble(txtNumber2.Text);
-
-            double product = number1 * number2;
-
+            ConvertNumbers();
+            double product = Multiply(number1, number2);
             txtResult.Text = product.ToString();
         }
 
         private void BtnDivide_Click(object sender, EventArgs e)
         {
-            double number1 = Convert.ToDouble(txtNumber1.Text);
-            double number2 = Convert.ToDouble(txtNumber2.Text);
-
-            double quotient = number1 / number2;
-
+            ConvertNumbers();
+            double quotient = Divide(number1, number2);
             txtResult.Text = quotient.ToString();
         }
     }
