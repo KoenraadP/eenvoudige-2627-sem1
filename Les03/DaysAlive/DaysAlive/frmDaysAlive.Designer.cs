@@ -36,6 +36,7 @@
             this.lblDay = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtDay
@@ -61,7 +62,7 @@
             // 
             // btnDays
             // 
-            this.btnDays.Location = new System.Drawing.Point(30, 91);
+            this.btnDays.Location = new System.Drawing.Point(30, 148);
             this.btnDays.Name = "btnDays";
             this.btnDays.Size = new System.Drawing.Size(224, 23);
             this.btnDays.TabIndex = 3;
@@ -71,7 +72,7 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(30, 140);
+            this.txtResult.Location = new System.Drawing.Point(30, 197);
             this.txtResult.Name = "txtResult";
             this.txtResult.Size = new System.Drawing.Size(224, 20);
             this.txtResult.TabIndex = 4;
@@ -103,11 +104,19 @@
             this.lblYear.TabIndex = 7;
             this.lblYear.Text = "Jaar";
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(30, 98);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(224, 20);
+            this.dateTimePicker.TabIndex = 8;
+            // 
             // frmDaysAlive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 177);
+            this.ClientSize = new System.Drawing.Size(276, 233);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.lblDay);
@@ -133,6 +142,7 @@
         private System.Windows.Forms.Label lblDay;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }
 
