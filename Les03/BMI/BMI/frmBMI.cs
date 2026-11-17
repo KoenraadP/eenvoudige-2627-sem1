@@ -17,9 +17,20 @@ namespace BMI
             InitializeComponent();
         }
 
+        // let op: invoer bij height moet met komma gebeuren
+        // niet met een punt! (wegens Belgisch regionale instellingen PC)
+        // alternatieve oplossing: invoer in centimeter en dan delen door 100
         private void BtnCalculate_Click(object sender, EventArgs e)
         {
+            // input lezen
+            double weight = Convert.ToDouble(txtWeight.Text);
+            double height = Convert.ToDouble(txtHeight.Text);
 
+            // berekening doen
+            double bmi = weight / (height * height);
+
+            // uitvoer, afgerond
+            txtResult.Text = Math.Round(bmi).ToString();
         }
     }
 }
