@@ -15,6 +15,16 @@ namespace AverageOfFour
         // globals om te gebruiken bij de uitwerking van de opdracht
         double dNr1, dNr2, dNr3, dNr4;
 
+        private void btnAvg_Click(object sender, EventArgs e)
+        {
+            // input met methode
+            ConvertNumbers();
+            // bewerking met methode
+            double result = AverageOfFour(dNr1, dNr2, dNr3, dNr4);
+            // output met methode
+            txtResult.Text = Output(result);
+        }
+
         public FrmAverage()
         {
             InitializeComponent();
@@ -34,21 +44,33 @@ namespace AverageOfFour
         // schrijf een methode die de variabelen dNr1, dNr2, dNr3 en dNr4
         // een waarde toekent: de inhoud van de vier textboxes, omgezet naar
         // double formaat
-
-
+        private void ConvertNumbers()
+        {
+            dNr1 = Convert.ToDouble(txtOne.Text);
+            dNr2 = Convert.ToDouble(txtTwo.Text);
+            dNr3 = Convert.ToDouble(txtThree.Text);
+            dNr4 = Convert.ToDouble(txtFour.Text);
+        }
 
         // schrijf een methode die het gemiddelde berekent van
         // vier opgegeven double cijfers
         // het gemiddelde moet uit de methode komen als 'uitkomst'
-
+        private double AverageOfFour(double d1, double d2, double d3, double d4)
+        {
+            double sum = d1 + d2 + d3 + d4;
+            double average = sum / 4;
+            return average;
+        }
 
 
         // schrijf een methode die een tekst zin maakt
         // "Het gemiddelde is ..."
         // op het einde van deze zin wordt een cijfer getoond
         // dit cijfer wordt ingevoerd bij het aanroepen van de methode
-
-
-
+        private string Output(double avg)
+        {
+            string output = "Het gemiddelde is " + avg;
+            return output;
+        }
     }
 }
