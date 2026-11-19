@@ -48,14 +48,36 @@ namespace TimeLost
             return daysBetween;
         }
 
+        // methode om te berekenen hoeveel uur je al 'verloren' hebt
+        // na x aantal dagen x aantal uur te spelen (parameters)
+        private double CalculateHoursLost(int days, double hours)
+        {
+            double totalHours = days * hours;
+            return totalHours;
+        }
+
+        // methode om uitvoer (output) zin te maken voor het eindresultaat
+        private string Output(int days, double hours)
+        {
+            string output = "Na " + days + " dagen release van GTA VI "
+                            + "ben ik " + hours + " uren van mijn leven kwijt.";
+            return output;
+        }
+
         #endregion
 
         // alle code die moet uitgevoerd worden bij klikken op knop
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             ReadInputs();
-            // variabele selectedDate 'testen'
-            Console.WriteLine(selectedDate);
+            // methode uitvoeren om te berekenen hoeveel dagen
+            // er tussen release en geselecteerde datum zitten
+            int daysPlayed = CalculateDaysPlayed(releaseDate, selectedDate);
+            // methode uitvoeren om te berekenen hoeveel
+            // uur ik dan in totaal al gespeeld heb
+            double hoursLost = CalculateHoursLost(daysPlayed, hoursPerDay);
+            // output tonen
+            txtOutput.Text = Output(daysPlayed, hoursLost);
         }
     }
 }
