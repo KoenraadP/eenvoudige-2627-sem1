@@ -48,6 +48,10 @@ namespace SimpleCalculator
             }
             else if (operation == ":")
             {
+                if (nr2 == 0)
+                {
+                    throw new Exception("Niet delen door nul");
+                }
                 result = nr1 / nr2;
             }
             else
@@ -58,6 +62,17 @@ namespace SimpleCalculator
 
             // uitkomst als return
             return result;
+        }
+
+        // methode om textboxes leeg te maken
+        // en de muis/cursor in het eerste tekstvak te zetten
+        private void ResetInput()
+        {
+            // verschillende manieren om textbox 'leeg' te maken
+            txtNumber1.Text = "";
+            txtNumber2.Clear();
+            // cursor in textbox 1 plaatsen
+            txtNumber1.Focus();
         }
 
         #endregion
@@ -82,6 +97,8 @@ namespace SimpleCalculator
             }
 
             txtResult.Text = output;
+            // reset uitvoeren om nieuwe waarden te kunnen invullen
+            ResetInput();
         }    
 
         #endregion
